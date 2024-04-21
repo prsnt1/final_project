@@ -10,3 +10,8 @@ class Animal:
     def scientific_name(self):
         """Return the scientific name, combining genus and species."""
         return f"{self.genus} {self.species}"
+    
+    def celebrate_birthday(self):
+        """Increase the age by 1 and print a birthday message."""
+        self.age += 1
+        print(f"Happy Birthday, {self.name}! You are now {self.age} years old.")

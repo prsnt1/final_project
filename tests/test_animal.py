@@ -14,3 +14,11 @@ def test_animal_initialization_sets_correct_scientific_name():
     """
     leo = Animal("Leo", "Panthera", "leo", True, 5)
     assert leo.scientific_name == "Panthera leo"
+
+def test_celebrating_birthday_increases_age_by_one():
+    """
+    Test Case 2: Verify that celebrating a birthday correctly increments the animal's age by 1.
+    """
+    leo = Animal("Leo", "Panthera", "leo", True, 5)
+    leo.celebrate_birthday()
+    assert leo.age == 6
