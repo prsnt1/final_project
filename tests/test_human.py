@@ -46,3 +46,11 @@ def test_celebrate_birthday_increases_age_by_one_and_prints_message_for_prashant
     captured = capsys.readouterr()  # Capture the printed output
     assert person.age == 29
     assert "Happy Birthday, Prashant Sharma! You are now 29 years old." in captured.out
+
+
+def test_adding_multiple_friends_updates_friends_list_for_prashant_sharma():
+    person = Human("Prashant", "Sharma", 28)
+    friends_to_add = ["Amit", "Raj", "Suman"]
+    for friend in friends_to_add:
+        person.add_friend(friend)
+    assert all(friend in person.friends for friend in friends_to_add)
