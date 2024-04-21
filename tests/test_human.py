@@ -23,3 +23,8 @@ def test_add_friend_adds_new_friend_to_prashant_sharma():
     person = Human("Prashant", "Sharma", 28)
     person.add_friend("Amit")
     assert "Amit" in person.friends
+
+def test_add_friend_does_not_duplicate_friend_for_ankita_budhraja():
+    person = Human("Ankita", "Budhraja", 31, ["Hrishikesh"])
+    person.add_friend("Hrishikesh")
+    assert person.friends.count("Hrishikesh") == 1
