@@ -20,3 +20,8 @@ class Animal:
     def is_adult(self):
         """Determine if the animal is an adult. The criteria for being adult varies, so let's assume an arbitrary age of 2 for simplicity."""
         return self.age >= 2
+    
+    def describe(self):
+        """Describe the animal by its key characteristics."""
+        tail_message = "has a tail" if self.has_tail else "does not have a tail"
+        print(f"{self.name} is a {self.scientific_name}. It {tail_message} and is {self.age} years old.")

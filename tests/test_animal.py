@@ -29,3 +29,15 @@ def test_is_adult_property_correctly_identifies_adult_animal():
     """
     leo = Animal("Leo", "Panthera", "leo", True, 5)
     assert leo.is_adult is True
+
+def test_describe_method_includes_tail_status_and_age(capsys):
+    """
+    Ensure the `describe` method outputs correct information about tail status and age.
+    """
+    perry = Animal("Perry", "Equus", "ferus caballus", False, 3)
+    perry.describe()
+
+    captured = capsys.readouterr()
+    expected_description = "Perry is a Equus ferus caballus. It does not have a tail and is 3 years old.\n"
+    
+    assert captured.out == expected_description
