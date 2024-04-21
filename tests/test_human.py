@@ -61,3 +61,15 @@ def test_removing_multiple_friends_updates_friends_list_correctly_for_prashant_s
     for friend in friends_to_remove:
         person.remove_friend(friend)
     assert "Sirak" in person.friends and len(person.friends) == 1
+
+def test_a_person_who_is_20_should_not_be_eligible_to_drink():
+    person = Human("Supriya", "Dahal", 20)
+    assert person.is_eligible_to_drink is False
+
+def test_a_person_who_is_21_should_be_eligible_to_drink():
+    person = Human("Vedant", "Agrawal", 21)
+    assert person.is_eligible_to_drink is True
+
+def test_a_person_who_is_26_should_be_eligible_to_drink():
+    person = Human("Aarzoo", "Karki", 26)
+    assert person.is_eligible_to_drink is True

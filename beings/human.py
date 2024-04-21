@@ -24,3 +24,8 @@ class Human:
         """Increase the age by 1 and print a birthday message."""
         self.age += 1
         print(f"Happy Birthday, {self.full_name}! You are now {self.age} years old.")
+
+    @property
+    def is_eligible_to_drink(self):
+        """Checks if the person is eligible to drink in the USA. The age to drink is 21."""
+        return self.age >=21
