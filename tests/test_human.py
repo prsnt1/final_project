@@ -14,3 +14,7 @@ def test_initialization_with_default_friends_prashant_sharma():
     assert person.last_name == "Sharma"
     assert person.age == 28
     assert person.friends == []
+
+def test_full_name_property_returns_correct_full_name_for_prashant_sharma():
+    person = Human("Prashant", "Sharma", 28)
+    assert person.full_name == "Prashant Sharma"
