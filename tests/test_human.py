@@ -39,3 +39,10 @@ def test_remove_friend_does_nothing_if_friend_not_found_for_sushrey_nepal():
     person.remove_friend("Rupesh")
     assert "Aadriana" in person.friends
     assert len(person.friends) == 1
+
+def test_celebrate_birthday_increases_age_by_one_and_prints_message_for_prashant_sharma(capsys):
+    person = Human("Prashant", "Sharma", 28)
+    person.celebrate_birthday()
+    captured = capsys.readouterr()  # Capture the printed output
+    assert person.age == 29
+    assert "Happy Birthday, Prashant Sharma! You are now 29 years old." in captured.out
