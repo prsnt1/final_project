@@ -28,3 +28,8 @@ def test_add_friend_does_not_duplicate_friend_for_ankita_budhraja():
     person = Human("Ankita", "Budhraja", 31, ["Hrishikesh"])
     person.add_friend("Hrishikesh")
     assert person.friends.count("Hrishikesh") == 1
+
+def test_remove_friend_removes_existing_friend_from_prashant_sharma():
+    person = Human("Prashant", "Sharma", 28, ["Aarzoo"])
+    person.remove_friend("Aarzoo")
+    assert "Aarzoo" not in person.friends
