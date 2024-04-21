@@ -15,3 +15,8 @@ class Animal:
         """Increase the age by 1 and print a birthday message."""
         self.age += 1
         print(f"Happy Birthday, {self.name}! You are now {self.age} years old.")
+
+    @property
+    def is_adult(self):
+        """Determine if the animal is an adult. The criteria for being adult varies, so let's assume an arbitrary age of 2 for simplicity."""
+        return self.age >= 2

@@ -22,3 +22,10 @@ def test_celebrating_birthday_increases_age_by_one():
     leo = Animal("Leo", "Panthera", "leo", True, 5)
     leo.celebrate_birthday()
     assert leo.age == 6
+
+def test_is_adult_property_correctly_identifies_adult_animal():
+    """
+    Test Case 3: Check if the `is_adult` property accurately identifies an animal as an adult.
+    """
+    leo = Animal("Leo", "Panthera", "leo", True, 5)
+    assert leo.is_adult is True
