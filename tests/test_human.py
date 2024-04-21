@@ -33,3 +33,9 @@ def test_remove_friend_removes_existing_friend_from_prashant_sharma():
     person = Human("Prashant", "Sharma", 28, ["Aarzoo"])
     person.remove_friend("Aarzoo")
     assert "Aarzoo" not in person.friends
+
+def test_remove_friend_does_nothing_if_friend_not_found_for_sushrey_nepal():
+    person = Human("Sushrey", "Nepal", 30, ["Aadriana"])
+    person.remove_friend("Rupesh")
+    assert "Aadriana" in person.friends
+    assert len(person.friends) == 1
