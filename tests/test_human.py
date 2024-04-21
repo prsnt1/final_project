@@ -18,3 +18,8 @@ def test_initialization_with_default_friends_prashant_sharma():
 def test_full_name_property_returns_correct_full_name_for_prashant_sharma():
     person = Human("Prashant", "Sharma", 28)
     assert person.full_name == "Prashant Sharma"
+
+def test_add_friend_adds_new_friend_to_prashant_sharma():
+    person = Human("Prashant", "Sharma", 28)
+    person.add_friend("Amit")
+    assert "Amit" in person.friends
