@@ -8,6 +8,9 @@ root_dir = Path(__file__).resolve().parent.parent
 sys.path.append(str(root_dir))
 from beings.human import Human 
 
-def test_init():
-    human =  Human("Prashant", "Sharma", 28)
-    assert human.full_name == "Prashant Sharma"
+def test_initialization_with_default_friends_prashant_sharma():
+    person = Human("Prashant", "Sharma", 28)
+    assert person.first_name == "Prashant"
+    assert person.last_name == "Sharma"
+    assert person.age == 28
+    assert person.friends == []
