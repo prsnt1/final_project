@@ -54,3 +54,10 @@ def test_adding_multiple_friends_updates_friends_list_for_prashant_sharma():
     for friend in friends_to_add:
         person.add_friend(friend)
     assert all(friend in person.friends for friend in friends_to_add)
+
+def test_removing_multiple_friends_updates_friends_list_correctly_for_prashant_sharma():
+    person = Human("Prashant", "Sharma", 28, ["Sirak", "Gowri", "Chanoot"])
+    friends_to_remove = ["Gowri", "Chanoot"]
+    for friend in friends_to_remove:
+        person.remove_friend(friend)
+    assert "Sirak" in person.friends and len(person.friends) == 1
